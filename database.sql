@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS ecommers11;
+USE ecommers11;
+
+-- Tabel untuk Data Barang (Topi)
+CREATE TABLE IF NOT EXISTS tmbbrg (
+  id_barang INT(11) NOT NULL AUTO_INCREMENT,
+  seri VARCHAR(50) NOT NULL,
+  nama_barang VARCHAR(100) NOT NULL,
+  jenis VARCHAR(50) NOT NULL,
+  harga BIGINT(20) NOT NULL,
+  deskripsi TEXT NOT NULL,
+  foto VARCHAR(225) NOT NULL,
+  PRIMARY KEY (id_barang)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Tabel untuk Data Transaksi
+CREATE TABLE IF NOT EXISTS transaksi (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  no_faktur VARCHAR(50) DEFAULT NULL,
+  tanggal DATE DEFAULT NULL,
+  nama_pembeli VARCHAR(100) DEFAULT NULL,
+  alamat TEXT DEFAULT NULL,
+  ktp VARCHAR(50) DEFAULT NULL,
+  id_barang INT(11) DEFAULT NULL,
+  jumlah INT(11) DEFAULT NULL,
+  total BIGINT(20) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
